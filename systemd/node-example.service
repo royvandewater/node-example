@@ -1,0 +1,17 @@
+[Unit]
+Description=Node Example
+Requires=docker.service
+After=mongo.service
+Wants=mongo.service
+Wants=nginx-proxy.service
+
+[Service]
+TimeoutStartSec=60
+Restart=always
+ExecStartPre=-/usr/bin/docker kill node-example
+ExecStartPre=-/usr/bin/docker rm node-example
+ExecStartPre=/usr/bin/docker pull royvandewater/node-example
+ExecStart=/usr/bin/docker run \
+    --name node-example \
+    --link mongo:mongo \
+    royvandewater/node-example

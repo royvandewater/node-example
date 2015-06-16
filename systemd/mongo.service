@@ -1,0 +1,17 @@
+[Unit]
+Description=Mongo DB
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=60
+Restart=always
+ExecStartPre=-/usr/bin/docker kill mongo
+ExecStartPre=-/usr/bin/docker rm mongo
+ExecStartPre=/usr/bin/docker pull mongo
+ExecStart=/usr/bin/docker run \
+    --name mongo \
+    mongo
+
+[Install]
+WantedBy=multi-user.target
