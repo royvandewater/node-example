@@ -1,0 +1,27 @@
+{
+  "name": "node-example",
+  "version": "1.0.0",
+  "description": "Example app that needs some mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/royvandewater/node-example.git"
+  },
+  "author": "Roy van de Water",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/royvandewater/node-example/issues"
+  },
+  "homepage": "https://github.com/royvandewater/node-example#readme",
+  "dependencies": {
+    "body-parser": "^1.13.0",
+    "coffee-script": "^1.9.3",
+    "errorhandler": "^1.4.0",
+    "express": "^4.12.4",
+    "mongojs": "^1.0.0",
+    "morgan": "^1.6.0"
+  }
+}
