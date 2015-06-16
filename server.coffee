@@ -5,8 +5,8 @@ errorHandler = require 'errorhandler'
 logger       = require 'morgan'
 mongojs      = require 'mongojs'
 
-mongo_port = MONGO_PORT_27018_TCP_PORT ? "27017"
-mongo_host = MONGO_PORT_27018_TCP_ADDR ? "localhost"
+mongo_port = MONGO_PORT_27017_TCP_PORT ? "27017"
+mongo_host = MONGO_PORT_27017_TCP_ADDR ? "localhost"
 
 db = mongojs "#{mongo_host}:#{mongo_port}/exampleDB", ['greetings']
 
